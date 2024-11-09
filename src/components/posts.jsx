@@ -18,7 +18,7 @@ export const Posts = () => {
 
   return ( 
     <section className="section-post">
-      <ul>
+      <ol>
         {data.map((curElem) => {
           const { id, body, title } = curElem;
           return (
@@ -30,7 +30,7 @@ export const Posts = () => {
             </li>
           );
         })}
-      </ul>
+      </ol>
     </section>
   );
 };

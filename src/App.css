@@ -58,6 +58,11 @@ button:hover {
 
  
 
+  & ol {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem;
+
     & li {
       background-color: #212f3c;
       padding: 1.6rem;
@@ -78,6 +83,11 @@ button:hover {
         box-shadow: rgb(167, 54, 13) 0px 7px 19px 0px;
       }
     }
-  
+  }
+}
+@media screen and (max-width: 720px) {
+  .section-post ol {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
