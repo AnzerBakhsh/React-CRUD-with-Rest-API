@@ -24,8 +24,8 @@ export const Posts = () => {
           return (
             <li  key={id}>
                 <p>ID:{id}</p>
-              <p>{title}</p>
-              <p>{body}</p>
+              <p> TITLE:{title}</p>
+              <p>CONTENT:{body}</p>
               <button>Edit</button>
               <button  className="btn-delete" >Delete</button>
             </li>
