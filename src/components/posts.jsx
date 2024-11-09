@@ -20,9 +20,10 @@ export const Posts = () => {
     <section className="section-post">
       <ol>
         {data.map((curElem) => {
-          const { id, body, title } = curElem;
+          const {id, body, title } = curElem;
           return (
-            <li key={id}>
+            <li  key={id}>
+                <p>ID:{id}</p>
               <p>{title}</p>
               <p>{body}</p>
               <button>Edit</button>
