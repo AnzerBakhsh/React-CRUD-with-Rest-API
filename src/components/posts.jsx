@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"; 
 import React from "react"; 
 import { getpost } from "@/API/postapi"; 
+import { deletepost } from "@/API/postapi";
 import "../App.css";
 
 export const Posts = () => { 
@@ -16,6 +17,24 @@ export const Posts = () => {
     getpostData(); 
   }, []); 
 
+//   function to delete post
+const handledeletepost = async (id) => {
+    try {
+     
+      const res = await deletepost(id);
+     
+      if (res.status === 200) {
+       
+        const updatedData = data.filter((curPost) => curPost.id !== id);
+        setData(updatedData); 
+      } else {
+        console.log("Failed to delete the post", res.status);
+      }
+    } catch (error) {
+      console.error("Error while deleting the post:", error);
+    }
+  };
+  
   return ( 
     <section className="section-post">
       <ol>
@@ -27,7 +46,7 @@ export const Posts = () => {
               <p> TITLE:{title}</p>
               <p>CONTENT:{body}</p>
               <button>Edit</button>
-              <button  className="btn-delete" >Delete</button>
+              <button  className="btn-delete" onClick={() => handledeletepost(id)}>Delete</button>
             </li>
           );
         })}
