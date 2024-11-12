@@ -11,6 +11,10 @@ export const getpost = () => {
 };
 
 // delete method
-export const deletepost =(id) =>{
+export const deletepost =(id) => {
     return api.delete('/posts/${id}');
+};
+// post method
+export const postdata =(post) => {
+    return api.post("/posts/", post);
 };

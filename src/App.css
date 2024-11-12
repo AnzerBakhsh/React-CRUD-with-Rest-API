@@ -9,7 +9,8 @@ html {
 
 p,
 a,
-li{
+li,
+input {
   font-size: 1.6rem;
   letter-spacing: 0.12rem;
   line-height: 1.5;
@@ -51,12 +52,37 @@ button:hover {
   align-items: center;
 }
 
+.section-form {
+  padding: 1.6rem;
+  background-color: #212f3d;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+  margin: 3.2rem auto;
 
+  form {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  & input {
+    width: 24rem;
+    color: #212f3d;
+    border: 0.1rem solid grey;
+    outline: none;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
 
 .section-post {
   width: 90%;
-
- 
 
   & ol {
     display: grid;
@@ -85,9 +111,21 @@ button:hover {
     }
   }
 }
+
+@media screen and (max-width: 980px) {
+  .section-form form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-post ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 720px) {
   .section-post ol {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-

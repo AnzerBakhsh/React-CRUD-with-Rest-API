@@ -3,6 +3,7 @@ import React from "react";
 import { getpost } from "@/API/postapi"; 
 import { deletepost } from "@/API/postapi";
 import "../App.css";
+import { Form } from "./Form";
 
 export const Posts = () => { 
   const [data, setData] = useState([]); 
@@ -36,6 +37,10 @@ const handledeletepost = async (id) => {
   };
   
   return ( 
+    <>
+    <section className="section-form">
+        < Form data={data} setData={setData}/>
+    </section>
     <section className="section-post">
       <ol>
         {data.map((curElem) => {
@@ -52,5 +57,6 @@ const handledeletepost = async (id) => {
         })}
       </ol>
     </section>
+    </>
   );
 };
